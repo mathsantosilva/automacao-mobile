@@ -4,4 +4,4 @@ platformName = "Android"
 deviceName = "Emulator"
 app = "C:\\automacao-mobile\\apks\\BR\\com.mobile.kairos.apk"
 udid = "emulator-5554"
-adbExecTimeout = 90000
+adbExecTimeout = 100000

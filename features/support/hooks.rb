@@ -2,7 +2,8 @@ Before do
     ## Inicia a sessão do driver
     driver.start_driver
     ## aumenta o timeout para encontrar elementos
-    driver.manage.timeouts.implicit_wait = 30
+    driver.manage.timeouts.implicit_wait = 50
+    sleep 25
   
   end
   
