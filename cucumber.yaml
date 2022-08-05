@@ -1,0 +1,4 @@
+default: -p bdd -p allure --publish-quiet
+bdd: --format pretty
+# Cria relatorios no formato do allure com os screenshots
+allure: --format AllureCucumber::CucumberFormatter --out=logs
