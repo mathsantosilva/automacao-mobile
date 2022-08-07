@@ -3,8 +3,10 @@ Before do
     driver.start_driver
     ## aumenta o timeout para encontrar elementos
     driver.manage.timeouts.implicit_wait = 50
-    sleep 25
-  
+
+    # Instanciando as classes
+    @login = LoginScreen.new
+    @dash = DashboardScreen.new
   end
   
   After do |scenario|

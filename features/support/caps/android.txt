@@ -1,7 +1,11 @@
 [caps]
-automationName = "UiAutomator2"
+automationName = "UIAutomator2"
 platformName = "Android"
 deviceName = "Emulator"
 app = "C:\\automacao-mobile\\apks\\BR\\com.mobile.kairos.apk"
-udid = "emulator-5554"
 adbExecTimeout = 100000
+appWaitActivity = "crc64d6bff933f4dc80cd.MainActivity"
+enforceAppInstall = false
+noSign = true
+dontStopAppOnReset = false
+noReset = true

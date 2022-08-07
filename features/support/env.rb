@@ -2,6 +2,7 @@
 require "allure-cucumber"
 # Subir uma instancia do appium e le os capabilities
 require "appium_lib"
+require "appium_lib_core"
 # Limpar os logs e screenshots
 require "fileutils"
 
