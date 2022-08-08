@@ -15,7 +15,7 @@ Quando('eu vou no menu e ativo as configs do multiuser') do
     find_element(xpath: '//android.widget.CheckBox[@text="SubEmpresa 3 - Sem a portaria 1510"]').click
     find_element(xpath: '//android.widget.CheckBox[@text="SubEmpresa 4 - Permissões - 23-05-2022 - 1024"]').click
     find_element(xpath: '//android.widget.TextView[@text="SALVAR"]').click
-    sleep 5
+    sleep 3
     find_element(id: 'android:id/button2').click 
 end
 

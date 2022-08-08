@@ -2,7 +2,7 @@ class LoginScreen
     def sign_in(tipo, email, password)
         find_element(xpath: "//android.widget.EditText[@text='#{tipo}']").send_keys(email)
         find_element(xpath: "//android.widget.EditText[@text='SENHA']").send_keys(password)
-        Appium::TouchAction.new.tap(start_x: 0.50, start_y: 0.670, offset_x: 0.40, offset_y: 0.670, duration: 1000)
+        hide_keyboard
         find_element(xpath: "//android.widget.TextView[@text='ENTRAR']").click
     end
 
