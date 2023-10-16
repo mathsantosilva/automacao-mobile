@@ -1,11 +1,13 @@
 [caps]
-automationName = "UIAutomator2"
+automationName = "UiAutomator2"
 platformName = "Android"
-deviceName = "Emulator"
-app = "C:\\automacao-mobile\\apks\\BR\\com.mobile.kairos.apk"
+deviceName = "RQ8MC05QJTP"
+app = "C:/projetos/mobile_producao_br/apks/BR/Kairos.Kairos.apk"
 adbExecTimeout = 100000
+uiautomator2ServerInstallTimeout = 20000
 appWaitActivity = "crc64d6bff933f4dc80cd.MainActivity"
-enforceAppInstall = true
+server_url = 'http://10.0.2.15:4723'
+enforceAppInstall = false
 noSign = true
 dontStopAppOnReset = false
-noReset = true
+noReset = false

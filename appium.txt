@@ -1,0 +1,17 @@
+[caps]
+automationName = "UiAutomator2"
+platformName = "Android"
+deviceName = "Pixel 5"
+deviceName = "RQ8MC05QJTP"
+adbExecTimeout = 100000
+uiautomator2ServerInstallTimeout = 20000
+app = "C:/projetos/mobile_producao_br/apks/BR/Kairos.Kairos.apk"
+appPackage = "Kairos.Kairos.apk"
+appActivity = "Kairos.Kairos.apk.kairos"
+enforceAppInstall = true
+noSign = true
+dontStopAppOnReset = true
+noReset = false
+
+[appium_lib]
+server_url = "http://10.0.2.15:4723/wd/hub"
