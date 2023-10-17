@@ -1,24 +1,20 @@
 #language: pt
 
-@MX
+@mx
 @mx_login
 Funcionalidade: Login no app mobile
     Rotina responsável pelo testes dos diferentes tipos de login
     
-    # Contexto: Acessando a tela de cadastro de empresas
-    #     Dado que acesso a tela de login em "Dimep/Account/LogOn" no ambiente MX
-    #     Então vou até a tela de empresas para cadastrar uma nova empresa 
-
     @mx_login_email_dash
     Cenario: Login utilizando email e senha
-        Dado que preencho o email "mobi21002@dimep.mx" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
-        Quando for direcionado para a dashboard e apresentar o nome do funcionario "Pessoa0002 Multi" do ambiente MX e clicar no relogio
+        Dado que preencho o email "mobi21001@dimep.mx" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
+        Quando for direcionado para a dashboard e apresentar o nome do funcionario "Pessoa0001 Multi" do ambiente MX e clicar no relogio
         Quando clicar em marcar ponto no aplicativo MX
         Então deverá apresentar a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol 
 
     @mx_login_email_marc
     Cenario: Login utilizando email e senha tela de marcação
-        Dado que preencho o email "mobi21006@dimep.MX" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
+        Dado que preencho o email "mobi21002@dimep.MX" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
         Quando estiver no dashboard em espanhol clico no menu e e deslogo do app
         Quando clico no botão em espanhol "Marcar punto"
         Quando clicar em marcar ponto no aplicativo MX
@@ -31,8 +27,8 @@ Funcionalidade: Login no app mobile
         Quando habilito a opção "Habilitar modo multiusuario" e seleciono a empresa e filial do ambiente MX
             |Empresa|Testes mobile - 23-02-22 - 1143|
         Quando clico em "GUARDAR", fecho a mensagem de sucesso "Configuración guardada con éxito Sincronización terminada" em espanhol e deslogo 
-        Então devo conseguir realizar login com a opção Registro, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PUNTO MARCADO CON ÉXITO"
-            |Registro|2|
+        Então devo conseguir realizar login no ambiente MX com a opção Registro, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PUNTO MARCADO CON ÉXITO"
+            |REGISTRO|2|
 
     @mx_login_azure_cert
     Cenario: Login utilizando azure certificado

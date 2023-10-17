@@ -23,21 +23,21 @@ Quando('clicar em marcar ponto no aplicativo BR') do
   @login.permissao_pasta  
 end
 
-Então('deverá apresentar a mensagem {string} em portugues') do |message_sucess|
+Então('deverá apresentar a mensagem {string} em portugues-br') do |message_sucess|
   sleep 2
   caminho_message_sucess = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView'
   message_atual = find_element(xpath: "#{caminho_message_sucess}").text
   expect(message_atual).to eql message_sucess
 end
 
-Quando('estiver no dashboard clico no menu e e deslogo do app') do
+Quando('estiver no dashboard em portugues-br clico no menu e e deslogo do app') do
   caminho_menu = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView'
   caminho_sair = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView'
   find_element(xpath: "#{caminho_menu}").click
   find_element(xpath: "#{caminho_sair}").click
 end
 
-Quando('clico no botão {string}') do |botao|
+Quando('clico no botão em portugues-br {string}') do |botao|
   find_element(xpath: "#{caminho_senha}").send_keys('1')
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
@@ -53,7 +53,7 @@ Dado('realizo o login com o email {string} e  a senha {string} master e clico em
   sleep 2
 end
 
-Quando('estiver no dashboard clico no menu e vou na opção em portugues {string}') do |opcao|
+Quando('estiver no dashboard clico no menu e vou na opção em portugues-br {string}') do |opcao|
   caminho_menu = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView'
   find_element(xpath: "#{caminho_menu}").click
   find_element(xpath: "//android.widget.TextView[@text='#{opcao}']").click
@@ -69,7 +69,7 @@ Quando('habilito a opção {string} e seleciono a empresa e filial do ambiente B
 
 end
 
-Quando('clico em {string}, fecho a mensagem de sucesso {string} em portugues e deslogo') do |botao, message_sucess|
+Quando('clico em {string}, fecho a mensagem de sucesso {string} em portugues-br e deslogo') do |botao, message_sucess|
   caminho_message_sucess = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView'
   caminho_botao_voltar = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
   caminho_opcao_sair = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView'
@@ -83,7 +83,7 @@ Quando('clico em {string}, fecho a mensagem de sucesso {string} em portugues e d
 
 end
 
-Então('devo conseguir realizar login com as opções Email, Matricula, CPF e PIS, utilizando a senha {string}, clicar em {string} e receber a mensagem de sucesso ao marcar ponto {string}') do |senha, botao, message_sucess, table|
+Então('devo conseguir realizar login no ambiente BR com as opções Email, Matricula, CPF e PIS, utilizando a senha {string}, clicar em {string} e receber a mensagem de sucesso ao marcar ponto {string}') do |senha, botao, message_sucess, table|
   caminho_campo_matricula = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'
   caminho_campo_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
   caminho_relogio = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
@@ -127,7 +127,7 @@ Quando('preencho o email {string} e senha {string} e clico em entrar na microsof
   sleep 2
 end
 
-Então('deverá direcionar para a dashboard e apresentar o nome do funcionario azure {string} e marcar ponto demonstrando a mensagem {string} em portugues') do |nome, message_sucess|
+Então('deverá direcionar para a dashboard e apresentar o nome do funcionario azure {string} e marcar ponto demonstrando a mensagem {string} em portugues-br') do |nome, message_sucess|
   caminho_nome_func = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView'
   caminho_relogio = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
   caminho_marcar_ponto = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.ImageView'

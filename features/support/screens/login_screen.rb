@@ -49,11 +49,11 @@ class LoginScreen
             return
         end
     end
-    def popup_marc_deslogar
+    def popup_marc_manter_logado
         sleep 2
         begin
             elemento = find_element(id: "android:id/message").text
-            find_element(id: 'android:id/button2').click
+            find_element(id: 'android:id/button1').click
         rescue
             return
         end

@@ -5,10 +5,6 @@
 Funcionalidade: Login no app mobile
     Rotina responsável pelo testes dos diferentes tipos de login
     
-    # Contexto: Acessando a tela de cadastro de empresas
-    #     Dado que acesso a tela de login em "Dimep/Account/LogOn" no ambiente BR
-    #     Então vou até a tela de empresas para cadastrar uma nova empresa 
-
     @br_login_email_dash
     Cenario: Login utilizando email e senha
         Dado que preencho o email "mobi21002@dimep.com.br" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo BR
@@ -32,7 +28,7 @@ Funcionalidade: Login no app mobile
             |Empresa|Testes mobile - 23-02-22 - 1010          |
             |Filial |Empresa Filial matriz - 15-07-2022 - 1435|
         Quando clico em "SALVAR", fecho a mensagem de sucesso "Configuração guardada com sucesso Sincronização terminada" em portugues-br e deslogo 
-        Então devo conseguir realizar login com as opções Email, Matricula, CPF e PIS, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PONTO MARCADO COM SUCESSO"
+        Então devo conseguir realizar login no ambiente BR com as opções Email, Matricula, CPF e PIS, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PONTO MARCADO COM SUCESSO"
             |MATRÍCULA|2          |
             |CPF      |87545635264|
             |CPF      |11111111140|
