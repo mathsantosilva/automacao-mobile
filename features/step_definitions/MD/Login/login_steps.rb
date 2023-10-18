@@ -6,6 +6,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
   find_element(xpath: "#{caminho_senha}").send_keys(senha)
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
+  @login.end_progress_bar
   end
   
   Quando('for direcionado para a dashboard e apresentar o nome do funcionario {string} do ambiente MD e clicar no relogio') do |nome|

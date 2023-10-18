@@ -31,6 +31,7 @@ Funcionalidade: Login no app mobile
         Então devo conseguir realizar login no ambiente BR com as opções Email, Matricula, CPF e PIS, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PONTO MARCADO COM SUCESSO"
             |MATRÍCULA|2          |
             |CPF      |87545635264|
+            |PIS      |11111111140|
 
     @br_login_azure_cert
     Cenario: Login utilizando azure certificado

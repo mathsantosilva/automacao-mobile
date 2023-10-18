@@ -6,6 +6,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
   find_element(xpath: "#{caminho_senha}").send_keys(senha)
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
+  @login.end_progress_bar
 end
 
 Quando('for direcionado para a dashboard e apresentar o nome do funcionario {string} do ambiente BR e clicar no relogio') do |nome|
@@ -52,9 +53,11 @@ Dado('realizo o login com o email {string} e  a senha {string} master e clico em
   find_element(xpath: "#{caminho_senha}").send_keys(senha)
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
+  @login.end_progress_bar
 end
 
 Quando('estiver no dashboard clico no menu e vou na opção em portugues-br {string}') do |opcao|
+  sleep 2
   caminho_menu = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView'
   find_element(xpath: "#{caminho_menu}").click
   find_element(xpath: "//android.widget.TextView[@text='#{opcao}']").click
@@ -81,7 +84,6 @@ Quando('clico em {string}, fecho a mensagem de sucesso {string} em portugues-br 
   find_element(id: "android:id/button2").click
   find_element(xpath: "#{caminho_botao_voltar}").click
   find_element(xpath: "#{caminho_opcao_sair}").click
-
 end
 
 Então('devo conseguir realizar login no ambiente BR com as opções Email, Matricula, CPF e PIS, utilizando a senha {string}, clicar em {string} e receber a mensagem de sucesso ao marcar ponto {string}') do |senha, botao, message_sucess, table|
