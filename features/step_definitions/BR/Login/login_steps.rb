@@ -38,6 +38,7 @@ Quando('estiver no dashboard em portugues-br clico no menu e e deslogo do app') 
 end
 
 Quando('clico no botão em portugues-br {string}') do |botao|
+  caminho_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
   find_element(xpath: "#{caminho_senha}").send_keys('1')
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
