@@ -25,36 +25,38 @@ class LoginScreen
     def permissao_bluetooth
         sleep 2
         begin
+            @driver.manage.timeouts.implicit_wait = 4
             elemento = find_element(id: "com.android.permissioncontroller:id/permission_message").text
             find_element(id: 'com.android.permissioncontroller:id/permission_allow_button').click
         rescue
+            @driver.manage.timeouts.implicit_wait = 50
             return
         end
+        @driver.manage.timeouts.implicit_wait = 50
     end
     def permissao_gps
-        sleep 2
+        @driver.manage.timeouts.implicit_wait = 3
         begin
-            @driver.manage.timeouts.implicit_wait = 2
             elemento = find_element(id: "com.android.permissioncontroller:id/permission_message").text
             find_element(id: 'com.android.permissioncontroller:id/permission_allow_foreground_only_button').click
         rescue
             @driver.manage.timeouts.implicit_wait = 50
             return
         end
+        @driver.manage.timeouts.implicit_wait = 50
     end
     def permissao_pasta
-        sleep 2
+        @driver.manage.timeouts.implicit_wait = 2
         begin
-            @driver.manage.timeouts.implicit_wait = 2
             elemento = find_element(id: "com.android.permissioncontroller:id/permission_message").text
             find_element(id: 'com.android.permissioncontroller:id/permission_allow_button').click
         rescue
             @driver.manage.timeouts.implicit_wait = 50
             return
         end
+        @driver.manage.timeouts.implicit_wait = 50
     end
     def popup_marc_manter_logado
-        sleep 2
         begin
             elemento = find_element(id: "android:id/message").text
             find_element(id: 'android:id/button1').click
@@ -63,14 +65,12 @@ class LoginScreen
         end
     end
     def end_progress_bar
+        @driver.manage.timeouts.implicit_wait = 1
         while true
             begin
-                puts 'aqui1'
-                @driver.manage.timeouts.implicit_wait = 1
                 elemento = find_element(class_name: 'android.widget.ProgressBar')
                 next
             rescue
-                puts 'aqui2'
                 @driver.manage.timeouts.implicit_wait = 50
                 return
             end

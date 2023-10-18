@@ -36,11 +36,11 @@ Funcionalidade: Login no app mobile
     @br_login_azure_cert
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo BR
-        Quando preencho o email "teste_kairos_qcmaint_br@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente BR
+        Quando preencho o email "teste_kairos_producao_br@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente BR
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario br" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-br
 
     @br_login_azure_ad
     Cenario: Login utilizando azure ad
         Dado que clico no botão Entrar com azure AD no aplicativo BR
         Quando preencho o email "2019@testexpto.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente BR
-        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario br" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-br
+        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "Pessoa0031 Ad" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-br
