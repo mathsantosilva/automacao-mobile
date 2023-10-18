@@ -1,4 +1,4 @@
-Dado('que preencho o email {string} e  a senha {string} e clico no botão principal {string} no aplicativo MD') do |string, string2, string3|
+Dado('que preencho o email {string} e  a senha {string} e clico no botão principal {string} no aplicativo MD') do |email, senha, botao|
   @login.permissao_bluetooth
   caminho_email = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'
   caminho_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
@@ -8,7 +8,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
   sleep 2
   end
   
-  Quando('for direcionado para a dashboard e apresentar o nome do funcionario {string} do ambiente MD e clicar no relogio') do |string|
+  Quando('for direcionado para a dashboard e apresentar o nome do funcionario {string} do ambiente MD e clicar no relogio') do |nome|
     caminho_nome_func = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView'
     caminho_relogio = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
     nome_atual = find_element(xpath: "#{caminho_nome_func.to_s}").text
@@ -23,7 +23,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     @login.permissao_pasta  
   end
   
-  Então('deverá apresentar a mensagem {string} em portugues-md') do |string|
+  Então('deverá apresentar a mensagem {string} em portugues-md') do |message_sucess|
     sleep 2
     caminho_message_sucess = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView'
     message_atual = find_element(xpath: "#{caminho_message_sucess}").text
@@ -37,14 +37,14 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     find_element(xpath: "#{caminho_sair}").click
   end
   
-  Quando('clico no botão em portugues-md {string}') do |string|
+  Quando('clico no botão em portugues-md {string}') do |botao|
     caminho_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
     find_element(xpath: "#{caminho_senha}").send_keys('1')
     find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
     sleep 2
   end
   
-  Dado('realizo o login com o email {string} e  a senha {string} master e clico em {string} no aplicativo MD') do |string, string2, string3|
+  Dado('realizo o login com o email {string} e  a senha {string} master e clico em {string} no aplicativo MD') do |email, senha, botao|
     @login.permissao_bluetooth
     caminho_email = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'
     caminho_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
@@ -55,14 +55,14 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     @login.end_progress_bar
   end
   
-  Quando('estiver no dashboard clico no menu e vou na opção em portugues-md {string}') do |string|
+  Quando('estiver no dashboard clico no menu e vou na opção em portugues-md {string}') do |opcao|
     sleep 2
     caminho_menu = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView'
     find_element(xpath: "#{caminho_menu}").click
     find_element(xpath: "//android.widget.TextView[@text='#{opcao}']").click
   end
   
-  Quando('habilito a opção {string} e seleciono a empresa e filial do ambiente MD') do |string, table|
+  Quando('habilito a opção {string} e seleciono a empresa e filial do ambiente MD') do |opcao, table|
     find_element(xpath: "//android.widget.CheckBox[@text='#{opcao}']").click
     empresas = table.rows_hash
     empresas.each do |emp|
@@ -70,7 +70,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     end
   end
   
-  Quando('clico em {string}, fecho a mensagem de sucesso {string} em portugues-md e deslogo') do |string, string2|
+  Quando('clico em {string}, fecho a mensagem de sucesso {string} em portugues-md e deslogo') do |botao, message_sucess|
     caminho_message_sucess = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView'
     caminho_botao_voltar = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
     caminho_opcao_sair = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView'
@@ -83,7 +83,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     find_element(xpath: "#{caminho_opcao_sair}").click
   end
   
-  Então('devo conseguir realizar login com as opções Email, Matricula, CPF e PIS, utilizando a senha {string}, clicar em {string} e receber a mensagem de sucesso ao marcar ponto {string}') do |string, string2, string3, table|
+  Então('devo conseguir realizar login com as opções Email, Matricula, CPF e PIS, utilizando a senha {string}, clicar em {string} e receber a mensagem de sucesso ao marcar ponto {string}') do |senha, botao, message_sucess, table|
     caminho_campo_matricula = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'
     caminho_campo_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
     caminho_relogio = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
@@ -120,7 +120,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     find_element(xpath: "#{caminho_botao_azure}").click 
   end
   
-  Quando('preencho o email {string} e senha {string} e clico em entrar na microsoft enterprise do ambiente MD') do |string, string2|
+  Quando('preencho o email {string} e senha {string} e clico em entrar na microsoft enterprise do ambiente MD') do |email, senha|
     caminho_campo_email_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText'
     caminho_campo_senha_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText'
     find_element(xpath: "//android.widget.Button[@text='Use outra conta']").click
@@ -131,7 +131,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     sleep 2
   end
   
-  Então('deverá direcionar para a dashboard e apresentar o nome do funcionario azure {string} e marcar ponto demonstrando a mensagem {string} em portugues-md') do |string, string2|
+  Então('deverá direcionar para a dashboard e apresentar o nome do funcionario azure {string} e marcar ponto demonstrando a mensagem {string} em portugues-md') do |nome, message_sucess|
     caminho_nome_func = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView'
     caminho_relogio = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView'
     caminho_marcar_ponto = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.ImageView'
