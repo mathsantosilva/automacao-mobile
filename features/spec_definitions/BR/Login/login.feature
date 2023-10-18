@@ -31,12 +31,11 @@ Funcionalidade: Login no app mobile
         Então devo conseguir realizar login no ambiente BR com as opções Email, Matricula, CPF e PIS, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PONTO MARCADO COM SUCESSO"
             |MATRÍCULA|2          |
             |CPF      |87545635264|
-            |CPF      |11111111140|
 
     @br_login_azure_cert
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo BR
-        Quando preencho o email "teste_kairos_qcdev_br@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente BR
+        Quando preencho o email "teste_kairos_qcmaint_br@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente BR
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario br" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-br
 
     @br_login_azure_ad

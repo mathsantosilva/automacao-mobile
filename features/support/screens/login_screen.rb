@@ -34,18 +34,22 @@ class LoginScreen
     def permissao_gps
         sleep 2
         begin
+            @driver.manage.timeouts.implicit_wait = 2
             elemento = find_element(id: "com.android.permissioncontroller:id/permission_message").text
             find_element(id: 'com.android.permissioncontroller:id/permission_allow_foreground_only_button').click
         rescue
+            @driver.manage.timeouts.implicit_wait = 50
             return
         end
     end
     def permissao_pasta
         sleep 2
         begin
+            @driver.manage.timeouts.implicit_wait = 2
             elemento = find_element(id: "com.android.permissioncontroller:id/permission_message").text
             find_element(id: 'com.android.permissioncontroller:id/permission_allow_button').click
         rescue
+            @driver.manage.timeouts.implicit_wait = 50
             return
         end
     end
@@ -57,5 +61,20 @@ class LoginScreen
         rescue
             return
         end
+    end
+    def end_progress_bar
+        while true
+            begin
+                puts 'aqui1'
+                @driver.manage.timeouts.implicit_wait = 1
+                elemento = find_element(class_name: 'android.widget.ProgressBar')
+                next
+            rescue
+                puts 'aqui2'
+                @driver.manage.timeouts.implicit_wait = 50
+                return
+            end
+        end
+        
     end
 end

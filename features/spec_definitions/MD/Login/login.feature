@@ -7,7 +7,7 @@ Funcionalidade: Login no app mobile
 
     @md_login_email_dash
     Cenario: Login utilizando email e senha
-        Dado que preencho o email "mobi21002@dimep.com.MD" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MD
+        Dado que preencho o email "mobi21001@dimep.com.MD" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MD
         Quando for direcionado para a dashboard e apresentar o nome do funcionario "Pessoa0002 Multi" do ambiente MD e clicar no relogio
         Quando clicar em marcar ponto no aplicativo MD
         Então deverá apresentar a mensagem "PONTO MARCADO COM SUCESSO" em portugues-md 
@@ -31,12 +31,12 @@ Funcionalidade: Login no app mobile
         Então devo conseguir realizar login com as opções Email, Matricula, CPF e PIS, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PONTO MARCADO COM SUCESSO"
             |MATRÍCULA|2          |
             |CPF      |87545635264|
-            |CPF      |11111111140|
+            |PIS      |11111111140|
 
     @md_login_azure_cert
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo MD
-        Quando preencho o email "teste_kairos_qcdev_MD@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MD
+        Quando preencho o email "teste_kairos_qcmaint_MD@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MD
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario MD" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-md
 
     @md_login_azure_ad

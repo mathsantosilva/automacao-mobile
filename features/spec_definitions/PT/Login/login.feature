@@ -33,7 +33,7 @@ Funcionalidade: Login no app mobile
     @pt_login_azure_cert
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo PT
-        Quando preencho o email "teste_kairos_qcdev_PT@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente PT
+        Quando preencho o email "teste_kairos_qcmaint_PT@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente PT
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario PT" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-pt
 
     @pt_login_azure_ad

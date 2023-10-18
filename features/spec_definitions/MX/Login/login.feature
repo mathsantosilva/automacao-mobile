@@ -14,7 +14,7 @@ Funcionalidade: Login no app mobile
 
     @mx_login_email_marc
     Cenario: Login utilizando email e senha tela de marcação
-        Dado que preencho o email "mobi21002@dimep.MX" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
+        Dado que preencho o email "mobi21002@dimep.mx" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
         Quando estiver no dashboard em espanhol clico no menu e e deslogo do app
         Quando clico no botão em espanhol "Marcar punto"
         Quando clicar em marcar ponto no aplicativo MX
@@ -22,7 +22,7 @@ Funcionalidade: Login no app mobile
 
     @mx_login_multiuser
     Cenario: Login utilizando utilizando multiuser
-        Dado realizo o login com o email "teste15642@dimep.MX" e  a senha "1" master e clico em "ENTRAR" no aplicativo MX
+        Dado realizo o login com o email "teste15642@dimep.mx" e  a senha "1" master e clico em "ENTRAR" no aplicativo MX
         Quando estiver no dashboard clico no menu e vou na opção em espanhol "CONFIGURACIÓN MÚLTIPLE USUARIO" 
         Quando habilito a opção "Habilitar modo multiusuario" e seleciono a empresa e filial do ambiente MX
             |Empresa|Testes mobile - 23-02-22 - 1143|
@@ -33,7 +33,7 @@ Funcionalidade: Login no app mobile
     @mx_login_azure_cert
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo MX
-        Quando preencho o email "teste_kairos_qcdev_MX@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MX
+        Quando preencho o email "teste_kairos_qcmaint_MX@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MX
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario mx" e marcar ponto demonstrando a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol
 
     @mx_login_azure_ad
