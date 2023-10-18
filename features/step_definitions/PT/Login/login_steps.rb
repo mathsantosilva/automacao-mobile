@@ -99,9 +99,12 @@ Então('devo conseguir realizar login no ambiente PT com a opção NÚMERO DO FU
     find_element(xpath: "#{caminho_marcar_ponto}").click
     @login.permissao_pasta
     sleep 2
-    @login.popup_marc_deslogar
+    @login.popup_marc_manter_logado
     message_atual = find_element(xpath: "#{caminho_message_sucess}").text
     expect(message_atual).to eql message_sucess
+    find_element(xpath: "#{caminho_botao_voltar}").click
+    find_element(xpath: "#{caminho_menu}").click
+    find_element(xpath: "#{caminho_opcao_sair}").click
   end                                                                                                                                              
 end                                                                                                                                                                                                                        
                                                                                                                                                                                                                            
