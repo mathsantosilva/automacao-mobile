@@ -18,7 +18,7 @@ Funcionalidade: Login no app mobile
         Quando estiver no dashboard em espanhol clico no menu e e deslogo do app
         Quando clico no botão em espanhol "Marcar punto"
         Quando clicar em marcar ponto no aplicativo MX deverá receber a mensagem "PUNTO MARCADO CON ÉXITO" e ficar com a quantidade de "1" marcações por enviar
-        Então deverá contem uma marcação "Pendente", clicando em sincronizar deverá informar "Sincronização terminada" e o status de "Sucesso" no envio para o sistema MX
+        Então deverá contem uma marcação "Pendiente", clicando em sincronizar deverá informar "Sincronización terminada" e o status de "Éxito" no envio para o sistema MX
 
     @mx_login_multiuser
     Cenario: Login utilizando utilizando multiuser
