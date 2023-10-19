@@ -16,7 +16,7 @@ Funcionalidade: Login no app mobile
     Cenario: Login utilizando email e senha tela de marcação
         Dado que preencho o email "mobi21003@dimep.pt" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo PT
         Quando estiver no dashboard em portugues-pt clico no menu e e deslogo do app
-        Quando clico no botão em portugues-pt "Marcar punto"
+        Quando clico no botão em portugues-pt "Marcar Ponto"
         Quando clicar em marcar ponto no aplicativo PT deverá receber a mensagem "PONTO MARCADO COM SUCESSO" e ficar com a quantidade de "1" marcações por enviar
         Então deverá contem uma marcação "Pendente", clicando em sincronizar deverá informar "Sincronização terminada" e o status de "Sucesso" no envio para o sistema PT
 
@@ -25,7 +25,8 @@ Funcionalidade: Login no app mobile
         Dado realizo o login com o email "teste12452@dimep.pt" e  a senha "1" master e clico em "ENTRAR" no aplicativo PT
         Quando estiver no dashboard clico no menu e vou na opção em portugues-pt "CONFIGURAÇÃO MÚLTIPLO UTLIZADOR" 
         Quando habilito a opção "Habilitar modo de múltiplo utilizador" e seleciono a empresa e filial do ambiente PT
-            |Empresa|Testes mobile - 23-02-22 - 1143|
+            |Empresa|Empresa de teste - 04-07-2022 - 1154|
+            |Filial |Filial - 28-09-2022 - 17:18         |
         Quando clico em "SALVAR", fecho a mensagem de sucesso "Configuração guardada com sucesso Sincronização terminada" em portugues-pt e deslogo 
         Então devo conseguir realizar login no ambiente PT com a opção NÚMERO DO FUNCIONÁRIO, utilizando a senha "1", clicar em "ENTRAR" e receber a mensagem de sucesso ao marcar ponto "PONTO MARCADO COM SUCESSO"
             |NÚMERO DO FUNCIONÁRIO|2|
