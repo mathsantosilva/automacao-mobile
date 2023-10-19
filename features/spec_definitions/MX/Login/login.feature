@@ -7,14 +7,14 @@ Funcionalidade: Login no app mobile
     
     @mx_login_email_dash
     Cenario: Login utilizando email e senha
-        Dado que preencho o email "mobi21001@dimep.mx" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
+        Dado que preencho o email "mobi21001@dimep.mx" e a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
         Quando for direcionado para a dashboard e apresentar o nome do funcionario "Pessoa0001 Multi" do ambiente MX e clicar no relogio
         Quando clicar em marcar ponto no aplicativo MX
         Então deverá apresentar a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol 
 
     @mx_login_email_marc
     Cenario: Login utilizando email e senha tela de marcação
-        Dado que preencho o email "mobi21003@dimep.mx" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
+        Dado que preencho o email "mobi21003@dimep.mx" e a senha "1" e clico no botão principal "ENTRAR" no aplicativo MX
         Quando estiver no dashboard em espanhol clico no menu e e deslogo do app
         Quando clico no botão em espanhol "Marcar punto"
         Quando clicar em marcar ponto no aplicativo MX deverá receber a mensagem "PUNTO MARCADO CON ÉXITO" e ficar com a quantidade de "1" marcações por enviar
@@ -22,7 +22,7 @@ Funcionalidade: Login no app mobile
 
     @mx_login_multiuser
     Cenario: Login utilizando utilizando multiuser
-        Dado realizo o login com o email "teste15642@dimep.mx" e  a senha "1" master e clico em "ENTRAR" no aplicativo MX
+        Dado realizo o login com o email "teste15642@dimep.mx" e a senha "1" master e clico em "ENTRAR" no aplicativo MX
         Quando estiver no dashboard clico no menu e vou na opção em espanhol "CONFIGURACIÓN MÚLTIPLE USUARIO" 
         Quando habilito a opção "Habilitar modo multiusuario" e seleciono a empresa e filial do ambiente MX
             |Empresa|Testes mobile - 23-02-22 - 1143|
@@ -40,4 +40,4 @@ Funcionalidade: Login no app mobile
     Cenario: Login utilizando azure ad
         Dado que clico no botão Entrar com azure AD no aplicativo MX
         Quando preencho o email "2030@testexpto.onmicrosoft.com	" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MX
-        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "Pessoa0031 Ad" e marcar ponto demonstrando a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol
+        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "Usuario ad" e marcar ponto demonstrando a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol

@@ -1,4 +1,4 @@
-Dado('que preencho o email {string} e  a senha {string} e clico no botão principal {string} no aplicativo MX') do |email, senha, botao|                                                                     
+Dado('que preencho o email {string} e a senha {string} e clico no botão principal {string} no aplicativo MX') do |email, senha, botao|                                                                     
   @login.permissao_bluetooth
   caminho_email = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'
   caminho_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
@@ -6,6 +6,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
   find_element(xpath: "#{caminho_senha}").send_keys(senha)
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
+  @login.end_progress_bar
 end                                                                                                                                                                                                              
                                                                                                                                                                                                                  
 Quando('for direcionado para a dashboard e apresentar o nome do funcionario {string} do ambiente MX e clicar no relogio') do |nome|                                                                            
@@ -73,7 +74,7 @@ Então('deverá contem uma marcação {string}, clicando em sincronizar deverá 
   expect(status_atual_sinc).to eql status_sinc 
 end
                                                                                                                                                                                                                  
-Dado('realizo o login com o email {string} e  a senha {string} master e clico em {string} no aplicativo MX') do |email, senha, botao|                                                                       
+Dado('realizo o login com o email {string} e a senha {string} master e clico em {string} no aplicativo MX') do |email, senha, botao|                                                                       
   @login.permissao_bluetooth
   caminho_email = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.EditText'
   caminho_senha = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.EditText'
@@ -81,6 +82,7 @@ Dado('realizo o login com o email {string} e  a senha {string} master e clico em
   find_element(xpath: "#{caminho_senha}").send_keys(senha)
   find_element(xpath: "//android.widget.TextView[@text='#{botao}']").click
   sleep 2
+  @login.end_progress_bar
 end                                                                                                                                                                                                              
                                                                                                                                                                                                                  
 Quando('estiver no dashboard clico no menu e vou na opção em espanhol {string}') do |opcao|                                                                                                                     
