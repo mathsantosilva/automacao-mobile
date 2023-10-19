@@ -14,11 +14,11 @@ Funcionalidade: Login no app mobile
 
     @pt_login_email_marc
     Cenario: Login utilizando email e senha tela de marcação
-        Dado que preencho o email "mobi21002@dimep.pt" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo PT
+        Dado que preencho o email "mobi21003@dimep.pt" e  a senha "1" e clico no botão principal "ENTRAR" no aplicativo PT
         Quando estiver no dashboard em portugues-pt clico no menu e e deslogo do app
         Quando clico no botão em portugues-pt "Marcar punto"
-        Quando clicar em marcar ponto no aplicativo PT
-        Então deverá apresentar a mensagem "PONTO MARCADO COM SUCESSO" em portugues-pt
+        Quando clicar em marcar ponto no aplicativo PT deverá receber a mensagem "PONTO MARCADO COM SUCESSO" e ficar com a quantidade de "1" marcações por enviar
+        Então deverá contem uma marcação "Pendente", clicando em sincronizar deverá informar "Sincronização terminada" e o status de "Sucesso" no envio para o sistema PT
 
     @pt_login_multiuser
     Cenario: Login utilizando utilizando multiuser
@@ -33,7 +33,7 @@ Funcionalidade: Login no app mobile
     @pt_login_azure_cert
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo PT
-        Quando preencho o email "teste_kairos_qcmaint_PT@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente PT
+        Quando preencho o email "teste_kairos_pt@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente PT
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario PT" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-pt
 
     @pt_login_azure_ad
