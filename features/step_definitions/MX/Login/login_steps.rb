@@ -150,8 +150,10 @@ Quando('preencho o email {string} e senha {string} e clico em entrar na microsof
   caminho_campo_email_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText'
   caminho_campo_senha_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText'
   find_element(xpath: "//android.widget.Button[@text='Use outra conta']").click
+  sleep 2
   find_element(class_name: "android.widget.EditText").send_keys(email)
   find_element(xpath: "//android.widget.Button[@text='Avançar']").click
+  sleep 2
   find_element(class_name: "android.widget.EditText").send_keys(senha)
   find_element(xpath: "//android.widget.Button[@text='Entrar']").click
   sleep 2                                                                                                                                  

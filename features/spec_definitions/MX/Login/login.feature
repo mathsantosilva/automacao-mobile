@@ -34,10 +34,10 @@ Funcionalidade: Login no app mobile
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo MX
         Quando preencho o email "teste_kairos_mx@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MX
-        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario mx" e marcar ponto demonstrando a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol
+        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "Usuario MX" e marcar ponto demonstrando a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol
 
     @mx_login_azure_ad
     Cenario: Login utilizando azure ad
         Dado que clico no botão Entrar com azure AD no aplicativo MX
-        Quando preencho o email "2019@testexpto.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MX
+        Quando preencho o email "2030@testexpto.onmicrosoft.com	" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MX
         Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "Pessoa0031 Ad" e marcar ponto demonstrando a mensagem "PUNTO MARCADO CON ÉXITO" em espanhol
