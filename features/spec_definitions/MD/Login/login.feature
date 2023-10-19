@@ -37,7 +37,7 @@ Funcionalidade: Login no app mobile
     Cenario: Login utilizando azure certificado
         Dado que clico no botão Entrar com azure AD no aplicativo MD
         Quando preencho o email "teste_mdcomune_br@matsantos21hotmail.onmicrosoft.com" e senha "Dimep*25" e clico em entrar na microsoft enterprise do ambiente MD
-        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "usuario 2" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-md
+        Então deverá direcionar para a dashboard e apresentar o nome do funcionario azure "Usuario 2" e marcar ponto demonstrando a mensagem "PONTO MARCADO COM SUCESSO" em portugues-md
 
     @md_login_azure_ad
     Cenario: Login utilizando azure ad

@@ -45,7 +45,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     sleep 2
   end
   
-  Quando('clicar em marcar ponto no aplicativo MD deverá receber a mensagem {string} e ficar com a quantidade de {string} marcações por enviar') do |string, string2|              
+  Quando('clicar em marcar ponto no aplicativo MD deverá receber a mensagem {string} e ficar com a quantidade de {string} marcações por enviar') do |message_sucess, quantidade|              
     caminho_marcar_ponto = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.ImageView'
     caminho_message_sucess = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView'
     caminho_quant_marc = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.TextView'     
@@ -59,7 +59,7 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     expect(quant_atual).to eql quantidade                                                                                                   
   end                                                                                                                                                                              
                                                                                                                                                                                    
-  Então('deverá contem uma marcação {string}, clicando em sincronizar deverá informar {string} e o status de {string} no envio para o sistema MD') do |string, string2, string3|   
+  Então('deverá contem uma marcação {string}, clicando em sincronizar deverá informar {string} e o status de {string} no envio para o sistema MD') do |status, message_sucess, status_sinc|   
     caminho_marc_sinc = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup[3]/android.widget.ImageView'
     caminho_status_marc = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.ListView/android.widget.LinearLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView'
     caminho_botao_sinc = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageView'
@@ -154,9 +154,9 @@ Dado('que preencho o email {string} e  a senha {string} e clico no botão princi
     caminho_campo_email_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText'
     caminho_campo_senha_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText'
     find_element(xpath: "//android.widget.Button[@text='Use outra conta']").click
-    find_element(xpath: "#{caminho_campo_email_azure}").send_keys(email)
+    find_element(class_name: "android.widget.EditText").send_keys(email)
     find_element(xpath: "//android.widget.Button[@text='Avançar']").click
-    find_element(xpath: "#{caminho_campo_senha_azure}").send_keys(senha)
+    find_element(class_name: "android.widget.EditText").send_keys(senha)
     find_element(xpath: "//android.widget.Button[@text='Entrar']").click
     sleep 2
   end

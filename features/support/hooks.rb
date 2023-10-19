@@ -1,9 +1,9 @@
 Before do
+
     ## Inicia a sessão do driver
     driver.start_driver
-
     ## aumenta o timeout para encontrar elementos
-    @driver.manage.timeouts.implicit_wait = 50
+    driver.manage.timeouts.implicit_wait = 50
 
     # Instanciando as classes
     @login = LoginScreen.new
