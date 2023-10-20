@@ -85,7 +85,8 @@ Dado('realizo o login com o email {string} e a senha {string} master e clico em 
   @login.end_progress_bar
 end                                                                                                                                                                                                              
                                                                                                                                                                                                                  
-Quando('estiver no dashboard clico no menu e vou na opção em espanhol {string}') do |opcao|                                                                                                                     
+Quando('estiver no dashboard clico no menu e vou na opção em espanhol {string}') do |opcao| 
+  sleep 2                                                                                                                    
   caminho_menu = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView'
   find_element(xpath: "#{caminho_menu}").click
   find_element(xpath: "//android.widget.TextView[@text='#{opcao}']").click                                                                                                                                   
