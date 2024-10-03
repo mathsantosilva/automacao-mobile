@@ -1,17 +1,15 @@
 [caps]
 automationName = "UiAutomator2"
 platformName = "Android"
-deviceName = "Pixel 5"
-deviceName = "RQ8MC05QJTP"
+deviceName = "emulator-5554"
 adbExecTimeout = 100000
-uiautomator2ServerInstallTimeout = 20000
-app = "C:/projetos/mobile_producao_br/apks/BR/Kairos.Kairos.apk"
-appPackage = "Kairos.Kairos.apk"
-appActivity = "Kairos.Kairos.apk.kairos"
+uiautomator2ServerInstallTimeout = 100000
+app = "C:\\Tools\\apks\\Prod\\100.0.0\\BR\\com.mobile.kairos.apk"
+appWaitActivity = "crc64d6bff933f4dc80cd.MainActivity"
 enforceAppInstall = true
 noSign = true
 dontStopAppOnReset = true
 noReset = false
 
 [appium_lib]
-server_url = "http://10.0.2.15:4723/wd/hub"
+server_url = "http://127.0.0.1:4723/wd/hub"

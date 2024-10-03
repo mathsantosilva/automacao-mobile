@@ -34,6 +34,7 @@ class LoginScreen
         end
         @driver.manage.timeouts.implicit_wait = 50
     end
+
     def permissao_gps
         @driver.manage.timeouts.implicit_wait = 3
         begin
@@ -45,6 +46,7 @@ class LoginScreen
         end
         @driver.manage.timeouts.implicit_wait = 50
     end
+
     def permissao_pasta
         @driver.manage.timeouts.implicit_wait = 2
         begin
@@ -56,6 +58,7 @@ class LoginScreen
         end
         @driver.manage.timeouts.implicit_wait = 50
     end
+    
     def popup_marc_manter_logado
         begin
             elemento = find_element(id: "android:id/message").text
@@ -64,6 +67,7 @@ class LoginScreen
             return
         end
     end
+    
     def end_progress_bar
         @driver.manage.timeouts.implicit_wait = 1
         while true
@@ -75,6 +79,37 @@ class LoginScreen
                 return
             end
         end
-        
+    end
+    def valid_microsoft_title
+        @driver.manage.timeouts.implicit_wait = 1
+        while true
+            begin
+                puts "Begin"
+                elemento = find_element(xpath: '//android.widget.Image[@text="Microsoft"]')
+                @driver.manage.timeouts.implicit_wait = 50
+                sleep 2
+                return
+            rescue
+                puts "rescue"
+                next
+            end
+        end
+    end
+    def valid_microsoft_troca_conta
+        @driver.manage.timeouts.implicit_wait = 1
+        caminho_botao_outra_conta_azure = '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ListView/android.view.View[8]/android.widget.Button'
+        while true
+            begin
+                puts "Begin"
+                elemento = find_element(xpath: '//android.widget.TextView[@text="Escolha uma conta"]')
+                find_element(xpath: "//android.widget.Button[@text='Use outra conta']").click
+                @driver.manage.timeouts.implicit_wait = 50
+                return
+            rescue
+                puts "rescue"
+                @driver.manage.timeouts.implicit_wait = 50
+                return
+            end
+        end
     end
 end
