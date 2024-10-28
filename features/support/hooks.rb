@@ -4,7 +4,7 @@ Before do
   driver.start_driver
 
   ## aumenta o timeout para encontrar elementos
-  driver.manage.timeouts.implicit_wait = 50
+  driver.manage.timeouts.implicit_wait = 30
 
   # Instanciando as classes
   @login = LoginScreen.new
@@ -12,10 +12,13 @@ Before do
   @net = ManipuleNetwork.new
   @sinc = SincScreen.new
   @marc = MarcScreen.new
+  @maniscreen = ManipuleScreen.new
 
   # Seta a internet do dispositivo como 6: Wi-Fi e dados móveis (ALL_NETWORK_ON)
   @net.set_network_default
-
+  @maniscreen.validscreenlock
+  @login.permissao_bluetooth
+  
   end
   
 After do |scenario|
@@ -37,6 +40,7 @@ After do |scenario|
     source: File.open(temp_shot),
   )
   driver.terminate_app('com.mobile.kairos')
+  #driver.execute_script("mobile: shell", { command: "pm clear com.mobile.kairos" })
   ## Finaliza a sessão do appium
   driver.quit
 end

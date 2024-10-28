@@ -99,6 +99,7 @@ PLATFORMS
 
 DEPENDENCIES
   allure-cucumber
+  allure-ruby-commons
   appium_lib
   appium_lib_core
   cucumber
