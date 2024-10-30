@@ -13,6 +13,7 @@ Before do
   @sinc = SincScreen.new
   @marc = MarcScreen.new
   @maniscreen = ManipuleScreen.new
+  @loc = Location.new
 
   # Seta a internet do dispositivo como 6: Wi-Fi e dados móveis (ALL_NETWORK_ON)
   @net.set_network_default
@@ -22,26 +23,38 @@ Before do
   end
   
 After do |scenario|
-  ## Após terminar um cenario ele tira uma screenshot no formato base64
-  binary_shot = driver.screenshot_as(:base64)
+  begin
+    ## Após terminar um cenario ele tira uma screenshot no formato base64
+    binary_shot = driver.screenshot_as(:base64)
+    diretorio_atual = Dir.pwd
+    temp_shot = "logs/temp_shot.png"
 
-  ## caminho temporario do screenshot
-  temp_shot = "logs/temp_shot.png"
+    unless Dir.exist?"#{diretorio_atual}/logs"
+      Dir.mkdir("#{diretorio_atual}/logs")
+    end
 
-  ## Transforma de binario em arquivo
-  File.open(temp_shot, "wb") do |f|
-    f.write(Base64.decode64(binary_shot).force_encoding("UTF-8"))
+    ## Transforma de binario em arquivo
+    File.open(temp_shot, "wb") do |f|
+      f.write(Base64.decode64(binary_shot).force_encoding("UTF-8"))
+    end
+
+    ## anexa a screenshot
+    Allure.add_attachment(
+      name: "screenshot",
+      type: Allure::ContentType::PNG,
+      source: File.open(temp_shot),
+    )
+    driver.terminate_app('com.mobile.kairos')
+    #driver.execute_script("mobile: shell", { command: "pm clear com.mobile.kairos" })
+    ## Finaliza a sessão do appium
+    @loc.location_default
+    driver.quit
+  rescue StandardError => error
+    puts "!Exception: #{error.to_s}" 
+    driver.terminate_app('com.mobile.kairos')
+    #driver.execute_script("mobile: shell", { command: "pm clear com.mobile.kairos" })
+    ## Finaliza a sessão do appium
+    driver.quit
   end
-  
-  ## anexa a screenshot
-  Allure.add_attachment(
-    name: "screenshot",
-    type: Allure::ContentType::PNG,
-    source: File.open(temp_shot),
-  )
-  driver.terminate_app('com.mobile.kairos')
-  #driver.execute_script("mobile: shell", { command: "pm clear com.mobile.kairos" })
-  ## Finaliza a sessão do appium
-  driver.quit
 end
   

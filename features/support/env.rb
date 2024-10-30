@@ -1,9 +1,6 @@
-# Relatorios no formato Json
 require "allure-cucumber"
-# Subir uma instancia do appium e le os capabilities
 require "appium_lib"
 require "appium_lib_core"
-# Limpar os logs e screenshots
 require "fileutils"
 require 'JSON'
 require 'date'
@@ -40,7 +37,7 @@ end
 
 
 # Carrega os Capabilities da pasta caps
-caps = Appium.load_appium_txt file: File.expand_path("C:/Tools/caps/Emulador_api_30.txt", __dir__)
+caps = Appium.load_appium_txt file: File.expand_path("C:/Tools/caps/Edge20.txt", __dir__)
 # Levanta uma instancia do driver do appium passando o capabilities 
 Appium::Driver.new(caps, true)
 

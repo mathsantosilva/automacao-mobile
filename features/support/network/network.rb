@@ -1,39 +1,40 @@
 class ManipuleNetwork 
-    # 0: Sem conexão (NO_CONNECTION)
-    # 1: Somente avião (AIRPLANE_MODE)
-    # 2: Somente Wi-Fi (WIFI_ONLY)
-    # 4: Somente dados móveis (DATA_ONLY)
-    # 6: Wi-Fi e dados móveis (ALL_NETWORK_ON)
+
+    # Resposta do getConnectivity
+    # {"wifi"=>true, "data"=>true, "airplaneMode"=>false}
 
     def get_network_atual
-        teste = driver.execute_script('mobile: getConnectivity')
-        puts teste
-        status_net = get_network_connection()
-        puts status_net
-        return status_net
+        con = driver.execute_script('mobile: getConnectivity')
+        return con
     end
 
     def set_network_default
         status_net = get_network_atual()
-        puts status_net.to_s != '6'
-        if status_net.to_s == '6'
+        wifi = status_net["wifi"]
+        data = status_net["data"]
+        airplanemode = status_net["airplanemode"]
+        if wifi != true or data != true or airplanemode == true
             driver.execute_script('mobile: setConnectivity', {
                 wifi: true,    # Ativar Wi-Fi
-                data: true,   # Desativar dados móveis
+                data: true,   # Ativar dados móveis
                 airplaneMode: false  # Desativar modo avião
               })
         end
     end
 
     def set_modo_aviao
-        status_net = get_network_atual()
-        if status_net.to_s != '1'
-            driver.set_network_connection(1)
-        end
+        driver.execute_script('mobile: setConnectivity', {
+            wifi: false,    # Ativar Wi-Fi
+            data: false,   # Ativar dados móveis
+            airplaneMode: true  # Desativar modo avião
+        })
     end
     
-    def set_modo_manual(modo)
-        driver.set_network_connection(modo)
-        status_net = get_network_atual()
+    def set_modo_manual(wifi, data, airplane)
+        driver.execute_script('mobile: setConnectivity', {
+            wifi: wifi,    # Ativar Wi-Fi
+            data: data,   # Ativar dados móveis
+            airplaneMode: airplane  # Desativar modo avião
+        })
     end
 end
