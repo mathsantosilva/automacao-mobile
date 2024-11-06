@@ -7,15 +7,22 @@ class Location
     # latitude -23.695694
     # longitude -46.627972   
 
-    def getlocation
-        result = @driver.execute_script("mobile: shell", { command: "get_location" })
+    def get_location
+        result = driver.location
         return result
     end
     def set_location(latitude, longitude)
-        
-        result = @driver.execute_script("mobile: shell", { command: "am start-foreground-service --user 0 -n io.appium.settings/.LocationService --es latitude #{latitude} --es longitude #{longitude}" })
+        begin
+            result = @driver.execute_script("mobile: shell", { command: "am start-foreground-service --user 0 -n io.appium.settings/.LocationService --es latitude #{latitude} --es longitude #{longitude}" })
+        rescue
+            return
+        end
     end
     def location_default
-        result = @driver.execute_script("mobile: shell", { command: "am stopservice --user 0 -n io.appium.settings/.LocationService" })
+        begin
+            result = @driver.execute_script("mobile: shell", { command: "am stopservice --user 0 -n io.appium.settings/.LocationService" })
+        rescue
+            return
+        end
     end    
 end
