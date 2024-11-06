@@ -38,8 +38,12 @@ end
 
 # Carrega os Capabilities da pasta caps
 caps = Appium.load_appium_txt file: File.expand_path("C:/Tools/caps/Edge20.txt", __dir__)
+opts = {
+    server_url: "http://127.0.0.1:4723/wd/hub"
+}
 # Levanta uma instancia do driver do appium passando o capabilities 
 Appium::Driver.new(caps, true)
+# driver = Appium::Core.for({caps: caps, appium_lib: opts}).start_driver
 
 # Passando os metodos do appium para o cucumber
 Appium.promote_appium_methods Object

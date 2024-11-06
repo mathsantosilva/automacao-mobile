@@ -1,20 +1,3 @@
-require 'timeout'
 
-def looping
-    while true
-        puts 'seila'
-    end
-end
-
-def teste
-    begin
-        Timeout.timeout(5) do
-            looping()
-        end
-    rescue Timeout::Error
-        puts "demorou"
-    end
-
-end
-
-teste()
+ultima_linha = File.readlines("C:/Tools/arquivos_testes/chaves.txt").last
+puts ultima_linha.strip

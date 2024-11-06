@@ -1,6 +1,7 @@
 class ManipuleScreen 
     def validscreenlock
-        if driver.device_locked?
+        lock = driver.execute_script("mobile: isLocked")
+        if lock
             driver.unlock
         end
     end

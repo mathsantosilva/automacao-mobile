@@ -14,6 +14,9 @@ Before do
   @marc = MarcScreen.new
   @maniscreen = ManipuleScreen.new
   @loc = Location.new
+  @arq = Arquivos.new
+  @aut = Autentication.new
+  @ges = Gestures.new
 
   # Seta a internet do dispositivo como 6: Wi-Fi e dados móveis (ALL_NETWORK_ON)
   @net.set_network_default
@@ -47,7 +50,6 @@ After do |scenario|
     driver.terminate_app('com.mobile.kairos')
     #driver.execute_script("mobile: shell", { command: "pm clear com.mobile.kairos" })
     ## Finaliza a sessão do appium
-    @loc.location_default
     driver.quit
   rescue StandardError => error
     puts "!Exception: #{error.to_s}" 
