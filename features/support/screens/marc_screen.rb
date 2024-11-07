@@ -1,37 +1,57 @@
 class MarcScreen
     @@meses = {
-        "JANEIRO" => "January", "FEVEREIRO" => "February", "MARÇO" => "March",
-        "ABRIL" => "April", "MAIO" => "May", "JUNHO" => "June",
-        "JULHO" => "July", "AGOSTO" => "August", "SETEMBRO" => "September",
-        "OUTUBRO" => "October", "NOVEMBRO" => "November", "DEZEMBRO" => "December"
-    }
-    @@dias_semana = {
-        "SEG." => "Mon.", "TER." => "Tue.", "QUA." => "Wed.",
-        "QUI." => "Thu.", "SEX." => "Fri.", "SÁB." => "Sat.", "DOM." => "Sun."
-    }
+        "Janeiro" => "January", "Enero" => "January",
+        "Fevereiro" => "February", "Febrero" => "February",
+        "Março" => "March", "Marzo" => "March",
+        "Abril" => "April",
+        "Maio" => "May", "Mayo" => "May",
+        "Junho" => "June", "Junio" => "June",
+        "Julho" => "July", "Julio" => "July",
+        "Agosto" => "August",
+        "Setembro" => "September", "Septiembre" => "September",
+        "Outubro" => "October", "Octubre" => "October",
+        "Novembro" => "November", "Noviembre" => "November",
+        "Dezembro" => "December", "Diciembre" => "December"
+      }
+      
+      @@dias = {
+        "Domingo" => "Sunday",
+        "Segunda-feira" => "Monday", "Lunes" => "Monday",
+        "Terça-feira" => "Tuesday", "Martes" => "Tuesday",
+        "Quarta-feira" => "Wednesday", "Miércoles" => "Wednesday",
+        "Quinta-feira" => "Thursday", "Jueves" => "Thursday",
+        "Sexta-feira" => "Friday", "Viernes" => "Friday",
+        "Sábado" => "Saturday"
+      }
+      ## JUE.. 19 SEPTIEMBRE 12:1
 
+      def get_ultima_marc()
+        caminho_ult_marc = '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[9]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView'
+        ult_marc = find_element(xpath: "#{caminho_ult_marc.to_s}").text
+      
+        if ult_marc != ' '
+            puts ult_marc
+            # Substitui meses
+            @@meses.each { |original, ingles| ult_marc.gsub!(original, ingles) }
+            puts ult_marc
+            # Substitui dias
+            @@dias.each { |original, ingles| ult_marc.gsub!(original, ingles) }
+            puts ult_marc
+            # Abrevia o dia da semana para 3 letras
+            ult_marc.gsub!(/\b(\w+)\b/) do |match|
+                Date::ABBR_DAYNAMES.include?(match) ? match[0, 3] + "." : match
+            end
+            puts ult_marc
+            data_formatada = DateTime.strptime(ult_marc, "%a. %d %B %H:%M")
+            ult_marc = data_formatada < Date.today ? '00:00' : data_formatada.strftime("%H:%M")
+        end
+      end
 
+      
     def get_relogio
         caminho_relogio = '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView'
         hora_relogio = find_element(xpath: "#{caminho_relogio.to_s}").text
         return hora_relogio
-    end
-
-    def get_ultima_marc
-        caminho_ult_marc = '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[9]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView'
-        ult_marc = find_element(xpath: "#{caminho_ult_marc.to_s}").text
-        @@dias_semana.each { |pt, en| ult_marc.gsub!(pt, en) }
-        @@meses.each { |pt, en| ult_marc.gsub!(pt, en) }
-        data_formatada = DateTime.strptime(ult_marc, "%a. %d %B %H:%M")
-        data_atual = data_formatada < Date.today
-        if data_atual
-            ult_marc = '00:00'
-        else
-            ult_marc = ult_marc.split(" ")
-            ult_marc = ult_marc[3]
-        end
-
-        return ult_marc
     end
     
     def valida_hora_marc

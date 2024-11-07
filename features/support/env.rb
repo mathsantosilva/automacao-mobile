@@ -37,7 +37,7 @@ end
 
 
 # Carrega os Capabilities da pasta caps
-caps = Appium.load_appium_txt file: File.expand_path("C:/Tools/caps/Edge20.txt", __dir__)
+caps = Appium.load_appium_txt file: File.expand_path("C:/Tools/caps/Edge20_mx.txt", __dir__)
 opts = {
     server_url: "http://127.0.0.1:4723/wd/hub"
 }
