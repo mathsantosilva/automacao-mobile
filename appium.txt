@@ -14,4 +14,4 @@ dontStopAppOnReset = true
 noReset = false
 
 [appium_lib]
-server_url = "http://10.0.2.15:4723/wd/hub"
+server_url = "http://127.0.0.1:4723/"

@@ -5,6 +5,10 @@ require "appium_lib"
 require "appium_lib_core"
 # Limpar os logs e screenshots
 require "fileutils"
+require 'dotenv'
+
+# Carrega os dados do .env
+Dotenv.load
 
 # Limpa os logs e os screenshots
 FileUtils.rm_f(Dir.glob("logs/*.json"))
