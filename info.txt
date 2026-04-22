@@ -1,0 +1,21 @@
+Comando adb bluetooth
+Enable bluetooth via cmd
+adb shell cmd bluetooth_manager enable
+Disable bluetooth cmd
+adb shell cmd bluetooth_manager disable
+
+
+Comando adb mock location
+adb shell am start-foreground-service --user 0 -n io.appium.settings/.LocationService --es latitude -23.961667 --es longitude -46.332222
+adb shell am stopservice --user 0 -n io.appium.settings/.LocationService
+
+Comando adb mock location para emulator
+adb emu geo fix -23.961667 -46.332222
+
+
+Comandos adb finger print
+adb -e emu finger touch 1
+
+
+Gerar o relatorio Allura 
+ allure serve C:\repositorios\Mobile_Kairos\producao\mobile_prod_br_emu_api_34\report\allure-results
