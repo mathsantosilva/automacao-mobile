@@ -6,7 +6,7 @@ class SincScreen
                 elemento = find_element(class_name: 'android.widget.ProgressBar')
                 next
             rescue
-                @driver.manage.timeouts.implicit_wait = 50
+                @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
                 return
             end
         end
@@ -18,7 +18,7 @@ class SincScreen
             begin
                 elemento = find_element(xpath: '//android.widget.RelativeLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.widget.TextView').text
                 if elemento == 'ONLINE'
-                    @driver.manage.timeouts.implicit_wait = 50
+                    @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
                     return
                 else
                     next

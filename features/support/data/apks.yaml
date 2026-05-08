@@ -1,0 +1,59 @@
+apk_producao_br:
+  caminho: 'C:\\Tools\\caps\\apks\\app-kairosemployeebr_prod-release.apk'
+  apppackage: 'com.dimep.kairosemployee.br'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcmaint_br:
+  caminho: 'C:\\Tools\\caps\\apks\\app-kairosemployeebr_qcmaint-release.apk'
+  apppackage: 'com.dimep.kairosemployee.br'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcdev_br:
+  caminho: 'C:\\Tools\\caps\\apks\\app-kairosemployeebr_qcdev-release.apk'
+  apppackage: 'com.dimep.kairosemployee.br'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_producao_md:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_prod-release.apk'
+  apppackage: 'com.madis.mdcomuneEmployee.br'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcmaint_md:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_qcmaint-release.apk'
+  apppackage: 'com.madis.mdcomuneEmployee.br'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcdev_md:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_qcdev-release.apk'
+  apppackage: 'com.madis.mdcomuneEmployee.br'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_producao_mx:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_prod-release.apk'
+  apppackage: 'com.dimep.kairosemployee.mx'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcmaint_mx:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_qcmaint-release.apk'
+  apppackage: 'com.dimep.kairosemployee.mx'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcdev_mx:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_qcdev-release.apk'
+  apppackage: 'com.dimep.kairosemployee.mx'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_producao_pt:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_prod-release.apk'
+  apppackage: 'com.dimep.kairosemployee.pt'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcmaint_pt:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_qcmaint-release.apk'
+  apppackage: 'com.dimep.kairosemployee.pt'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'
+
+apk_qcdev_pt:
+  caminho: 'C:\\Tools\\caps\\apks\\app-mdcomuneemployeebr_qcdev-release.apk'
+  apppackage: 'com.dimep.kairosemployee.pt'
+  appactivity: 'com.dimep.kairosemployee.MainActivity'

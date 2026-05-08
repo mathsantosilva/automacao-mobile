@@ -1,3 +1,2 @@
 default: "--format pretty --publish-quiet --color --format AllureCucumber::CucumberFormatter --out report/allure-results"
 bdd: --format pretty
-

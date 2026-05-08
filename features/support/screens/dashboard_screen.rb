@@ -1,3 +1,5 @@
+require_relative '../config/constants'
+
 class DashboardScreen
     def namepeolpe
         find_element(xpath: "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView").text
@@ -9,7 +11,7 @@ class DashboardScreen
         begin
             find_element(id: "android:id/autofill_save_no").click 
         rescue
-            @driver.manage.timeouts.implicit_wait = 50
+            @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
             return
         end
     end
@@ -20,13 +22,14 @@ class DashboardScreen
             begin
                 widget = '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ImageView'
                 find_element(xpath: "#{widget}")
-                @driver.manage.timeouts.implicit_wait = 50
+                @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
                 return
             rescue
                 next
             end
         end
     end
+    
     def valida_pop_sinc_marcs
         @driver.manage.timeouts.implicit_wait = 1
         while true
@@ -34,7 +37,7 @@ class DashboardScreen
                 popup = '//android.widget.TextView[@resource-id="android:id/message"]'
                 text = find_element(xpath: "#{popup}").text
                 find_element(xpath: "//android.widget.TextView[@resource-id='android:id/message']").click
-                @driver.manage.timeouts.implicit_wait = 50
+                @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
                 next
             rescue
                 return

@@ -1,0 +1,27 @@
+store_br:
+  nome_funcionario: "usuario store"
+  email: mobistore@dimep.com.br
+  senha: "1"
+  botao: "Entrar"
+  mensagem_sucesso: "Usuários sincronizados com sucesso!"
+
+store_md:
+  nome_funcionario: "usuario store"
+  email: mobistore@madis.com.br
+  senha: "1"
+  botao: "Entrar"
+  mensagem_sucesso: "Usuários sincronizados com sucesso!"
+
+store_mx:
+  nome_funcionario: "usuario store"
+  email: mobistore@dimep.mx
+  senha: "1"
+  botao: "Iniciar sesión"
+  mensagem_sucesso: "¡Los usuarios se sincronizaron exitosamente!"
+
+store_pt:
+  nome_funcionario: "usuario store"
+  email: mobistore@dimep.pt
+  senha: "1"
+  botao: "Entrar"
+  mensagem_sucesso: "Utilizadores sincronizados com sucesso!"

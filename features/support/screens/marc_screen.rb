@@ -78,6 +78,7 @@ class MarcScreen
             end
         end
     end
+
     def valida_pop_multiuser
         @driver.manage.timeouts.implicit_wait = 1
         while true
@@ -86,13 +87,14 @@ class MarcScreen
                 popup = '//android.widget.TextView[@resource-id="android:id/message"]'
                 text = find_element(xpath: "#{popup}").text
                 find_element(xpath: "//android.widget.Button[@resource-id='android:id/button1']").click
-                @driver.manage.timeouts.implicit_wait = 50
+                @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
                 return
             rescue
                 next
             end
         end
     end
+    
     def valida_camera_open
         @driver.manage.timeouts.implicit_wait = 1
         while true
@@ -102,8 +104,7 @@ class MarcScreen
                 text = find_element(xpath: "#{popup}")
                 next
             rescue
-                puts "rescue"
-                @driver.manage.timeouts.implicit_wait = 50
+                @driver.manage.timeouts.implicit_wait = Constants::Timeouts::IMPLICIT_WAIT
                 return
             end
         end

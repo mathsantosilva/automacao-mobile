@@ -193,7 +193,7 @@ Dado('realizo o login com o usuario {string} e clico no botão {string} BR') do 
     find_element(xpath: "//android.widget.TextView[@text='#{tipo}']").click
     find_element(xpath: "#{caminho_email}").send_keys(input)
     find_element(xpath: "#{caminho_senha}").send_keys(1)
-    driver.hide_keyboard
+    @helpers.esconder_teclado
     find_element(xpath: "//android.widget.TextView[@text='ENTRAR']").click
     @dash.valida_pop_sinc_marcs
     @dash.closed_save_password
